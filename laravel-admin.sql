@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50719
 File Encoding         : 65001
 
-Date: 2019-04-17 16:13:35
+Date: 2019-06-10 16:28:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,7 +29,7 @@ CREATE TABLE `admin_menu` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_menu
@@ -43,6 +43,8 @@ INSERT INTO `admin_menu` VALUES ('6', '2', '6', '菜单管理', 'fa-bars', 'auth
 INSERT INTO `admin_menu` VALUES ('7', '0', '0', '配置管理', 'fa-cog', null, '2019-04-15 07:37:17', '2019-04-15 07:37:17');
 INSERT INTO `admin_menu` VALUES ('8', '7', '0', '系统配置', 'fa-wrench', '/config/system', '2019-04-15 07:38:38', '2019-04-15 07:47:17');
 INSERT INTO `admin_menu` VALUES ('9', '0', '0', '用户管理', 'fa-user-md', null, '2019-04-17 02:03:45', '2019-04-17 02:05:40');
+INSERT INTO `admin_menu` VALUES ('10', '9', '0', '用户列表', 'fa-hand-stop-o', 'users', '2019-06-06 06:53:08', '2019-06-10 02:52:27');
+INSERT INTO `admin_menu` VALUES ('11', '9', '0', '测试', 'fa-bars', 'ceshi/index', '2019-06-10 02:46:44', '2019-06-10 02:46:44');
 
 -- ----------------------------
 -- Table structure for admin_operation_log
@@ -59,7 +61,7 @@ CREATE TABLE `admin_operation_log` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `admin_operation_log_user_id_index` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=621 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=955 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_operation_log
@@ -684,6 +686,340 @@ INSERT INTO `admin_operation_log` VALUES ('617', '1', 'admin/auth/permissions', 
 INSERT INTO `admin_operation_log` VALUES ('618', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-17 06:40:55', '2019-04-17 06:40:55');
 INSERT INTO `admin_operation_log` VALUES ('619', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-17 06:40:56', '2019-04-17 06:40:56');
 INSERT INTO `admin_operation_log` VALUES ('620', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-04-17 06:40:56', '2019-04-17 06:40:56');
+INSERT INTO `admin_operation_log` VALUES ('621', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-04 01:38:39', '2019-06-04 01:38:39');
+INSERT INTO `admin_operation_log` VALUES ('622', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-04 01:38:43', '2019-06-04 01:38:43');
+INSERT INTO `admin_operation_log` VALUES ('623', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-04 01:38:44', '2019-06-04 01:38:44');
+INSERT INTO `admin_operation_log` VALUES ('624', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-04 01:38:45', '2019-06-04 01:38:45');
+INSERT INTO `admin_operation_log` VALUES ('625', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-04 01:38:46', '2019-06-04 01:38:46');
+INSERT INTO `admin_operation_log` VALUES ('626', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-04 01:38:46', '2019-06-04 01:38:46');
+INSERT INTO `admin_operation_log` VALUES ('627', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-04 01:38:47', '2019-06-04 01:38:47');
+INSERT INTO `admin_operation_log` VALUES ('628', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-04 01:38:48', '2019-06-04 01:38:48');
+INSERT INTO `admin_operation_log` VALUES ('629', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-04 01:38:51', '2019-06-04 01:38:51');
+INSERT INTO `admin_operation_log` VALUES ('630', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-04 01:38:53', '2019-06-04 01:38:53');
+INSERT INTO `admin_operation_log` VALUES ('631', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-04 01:38:54', '2019-06-04 01:38:54');
+INSERT INTO `admin_operation_log` VALUES ('632', '1', 'admin/config/system', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-04 01:38:55', '2019-06-04 01:38:55');
+INSERT INTO `admin_operation_log` VALUES ('633', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-04 01:38:57', '2019-06-04 01:38:57');
+INSERT INTO `admin_operation_log` VALUES ('634', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-05 08:23:09', '2019-06-05 08:23:09');
+INSERT INTO `admin_operation_log` VALUES ('635', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:13', '2019-06-05 08:23:13');
+INSERT INTO `admin_operation_log` VALUES ('636', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:14', '2019-06-05 08:23:14');
+INSERT INTO `admin_operation_log` VALUES ('637', '1', 'admin/config/system', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:15', '2019-06-05 08:23:15');
+INSERT INTO `admin_operation_log` VALUES ('638', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:18', '2019-06-05 08:23:18');
+INSERT INTO `admin_operation_log` VALUES ('639', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:18', '2019-06-05 08:23:18');
+INSERT INTO `admin_operation_log` VALUES ('640', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:19', '2019-06-05 08:23:19');
+INSERT INTO `admin_operation_log` VALUES ('641', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:20', '2019-06-05 08:23:20');
+INSERT INTO `admin_operation_log` VALUES ('642', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:21', '2019-06-05 08:23:21');
+INSERT INTO `admin_operation_log` VALUES ('643', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:21', '2019-06-05 08:23:21');
+INSERT INTO `admin_operation_log` VALUES ('644', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:22', '2019-06-05 08:23:22');
+INSERT INTO `admin_operation_log` VALUES ('645', '1', 'admin/config/system', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:23', '2019-06-05 08:23:23');
+INSERT INTO `admin_operation_log` VALUES ('646', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:24', '2019-06-05 08:23:24');
+INSERT INTO `admin_operation_log` VALUES ('647', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:25', '2019-06-05 08:23:25');
+INSERT INTO `admin_operation_log` VALUES ('648', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:25', '2019-06-05 08:23:25');
+INSERT INTO `admin_operation_log` VALUES ('649', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:26', '2019-06-05 08:23:26');
+INSERT INTO `admin_operation_log` VALUES ('650', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:26', '2019-06-05 08:23:26');
+INSERT INTO `admin_operation_log` VALUES ('651', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:26', '2019-06-05 08:23:26');
+INSERT INTO `admin_operation_log` VALUES ('652', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:26', '2019-06-05 08:23:26');
+INSERT INTO `admin_operation_log` VALUES ('653', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:27', '2019-06-05 08:23:27');
+INSERT INTO `admin_operation_log` VALUES ('654', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:27', '2019-06-05 08:23:27');
+INSERT INTO `admin_operation_log` VALUES ('655', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:34', '2019-06-05 08:23:34');
+INSERT INTO `admin_operation_log` VALUES ('656', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:35', '2019-06-05 08:23:35');
+INSERT INTO `admin_operation_log` VALUES ('657', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:23:35', '2019-06-05 08:23:35');
+INSERT INTO `admin_operation_log` VALUES ('658', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:26:23', '2019-06-05 08:26:23');
+INSERT INTO `admin_operation_log` VALUES ('659', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:26:24', '2019-06-05 08:26:24');
+INSERT INTO `admin_operation_log` VALUES ('660', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:26:48', '2019-06-05 08:26:48');
+INSERT INTO `admin_operation_log` VALUES ('661', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:26:50', '2019-06-05 08:26:50');
+INSERT INTO `admin_operation_log` VALUES ('662', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:26:51', '2019-06-05 08:26:51');
+INSERT INTO `admin_operation_log` VALUES ('663', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:26:55', '2019-06-05 08:26:55');
+INSERT INTO `admin_operation_log` VALUES ('664', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:26:57', '2019-06-05 08:26:57');
+INSERT INTO `admin_operation_log` VALUES ('665', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:26:58', '2019-06-05 08:26:58');
+INSERT INTO `admin_operation_log` VALUES ('666', '1', 'admin/auth/permissions/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:27:01', '2019-06-05 08:27:01');
+INSERT INTO `admin_operation_log` VALUES ('667', '1', 'admin/auth/permissions/create', 'GET', '127.0.0.1', '[]', '2019-06-05 08:27:29', '2019-06-05 08:27:29');
+INSERT INTO `admin_operation_log` VALUES ('668', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:27:36', '2019-06-05 08:27:36');
+INSERT INTO `admin_operation_log` VALUES ('669', '1', 'admin/config/system', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:33:17', '2019-06-05 08:33:17');
+INSERT INTO `admin_operation_log` VALUES ('670', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:33:34', '2019-06-05 08:33:34');
+INSERT INTO `admin_operation_log` VALUES ('671', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:33:38', '2019-06-05 08:33:38');
+INSERT INTO `admin_operation_log` VALUES ('672', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:34:14', '2019-06-05 08:34:14');
+INSERT INTO `admin_operation_log` VALUES ('673', '1', 'admin/config/system', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:34:18', '2019-06-05 08:34:18');
+INSERT INTO `admin_operation_log` VALUES ('674', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:34:21', '2019-06-05 08:34:21');
+INSERT INTO `admin_operation_log` VALUES ('675', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:34:23', '2019-06-05 08:34:23');
+INSERT INTO `admin_operation_log` VALUES ('676', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:34:26', '2019-06-05 08:34:26');
+INSERT INTO `admin_operation_log` VALUES ('677', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:34:28', '2019-06-05 08:34:28');
+INSERT INTO `admin_operation_log` VALUES ('678', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:34:34', '2019-06-05 08:34:34');
+INSERT INTO `admin_operation_log` VALUES ('679', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"id\":null}', '2019-06-05 08:34:51', '2019-06-05 08:34:51');
+INSERT INTO `admin_operation_log` VALUES ('680', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:34:55', '2019-06-05 08:34:55');
+INSERT INTO `admin_operation_log` VALUES ('681', '1', 'admin/auth/setting', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:35:02', '2019-06-05 08:35:02');
+INSERT INTO `admin_operation_log` VALUES ('682', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:35:16', '2019-06-05 08:35:16');
+INSERT INTO `admin_operation_log` VALUES ('683', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:36:09', '2019-06-05 08:36:09');
+INSERT INTO `admin_operation_log` VALUES ('684', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:36:12', '2019-06-05 08:36:12');
+INSERT INTO `admin_operation_log` VALUES ('685', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:36:14', '2019-06-05 08:36:14');
+INSERT INTO `admin_operation_log` VALUES ('686', '1', 'admin/auth/permissions/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:40:28', '2019-06-05 08:40:28');
+INSERT INTO `admin_operation_log` VALUES ('687', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:40:31', '2019-06-05 08:40:31');
+INSERT INTO `admin_operation_log` VALUES ('688', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:40:33', '2019-06-05 08:40:33');
+INSERT INTO `admin_operation_log` VALUES ('689', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"id\":null}', '2019-06-05 08:40:36', '2019-06-05 08:40:36');
+INSERT INTO `admin_operation_log` VALUES ('690', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"id\":null}', '2019-06-05 08:40:40', '2019-06-05 08:40:40');
+INSERT INTO `admin_operation_log` VALUES ('691', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:40:45', '2019-06-05 08:40:45');
+INSERT INTO `admin_operation_log` VALUES ('692', '1', 'admin/config/system', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:40:53', '2019-06-05 08:40:53');
+INSERT INTO `admin_operation_log` VALUES ('693', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:42:22', '2019-06-05 08:42:22');
+INSERT INTO `admin_operation_log` VALUES ('694', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:42:24', '2019-06-05 08:42:24');
+INSERT INTO `admin_operation_log` VALUES ('695', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 08:42:26', '2019-06-05 08:42:26');
+INSERT INTO `admin_operation_log` VALUES ('696', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-05 09:05:05', '2019-06-05 09:05:05');
+INSERT INTO `admin_operation_log` VALUES ('697', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-05 09:10:10', '2019-06-05 09:10:10');
+INSERT INTO `admin_operation_log` VALUES ('698', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-06 01:27:17', '2019-06-06 01:27:17');
+INSERT INTO `admin_operation_log` VALUES ('699', '1', 'admin/config/system', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 01:30:41', '2019-06-06 01:30:41');
+INSERT INTO `admin_operation_log` VALUES ('700', '1', 'admin/config/system', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 01:30:45', '2019-06-06 01:30:45');
+INSERT INTO `admin_operation_log` VALUES ('701', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 01:30:46', '2019-06-06 01:30:46');
+INSERT INTO `admin_operation_log` VALUES ('702', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 01:30:47', '2019-06-06 01:30:47');
+INSERT INTO `admin_operation_log` VALUES ('703', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 01:30:48', '2019-06-06 01:30:48');
+INSERT INTO `admin_operation_log` VALUES ('704', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 01:35:16', '2019-06-06 01:35:16');
+INSERT INTO `admin_operation_log` VALUES ('705', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 01:38:41', '2019-06-06 01:38:41');
+INSERT INTO `admin_operation_log` VALUES ('706', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 01:38:44', '2019-06-06 01:38:44');
+INSERT INTO `admin_operation_log` VALUES ('707', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 01:39:34', '2019-06-06 01:39:34');
+INSERT INTO `admin_operation_log` VALUES ('708', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-06 06:02:30', '2019-06-06 06:02:30');
+INSERT INTO `admin_operation_log` VALUES ('709', '1', 'admin/auth/logout', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 06:04:10', '2019-06-06 06:04:10');
+INSERT INTO `admin_operation_log` VALUES ('710', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-06 06:04:15', '2019-06-06 06:04:15');
+INSERT INTO `admin_operation_log` VALUES ('711', '1', 'admin/auth/logout', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 06:04:20', '2019-06-06 06:04:20');
+INSERT INTO `admin_operation_log` VALUES ('712', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-06 06:05:00', '2019-06-06 06:05:00');
+INSERT INTO `admin_operation_log` VALUES ('713', '1', 'admin/auth/login', 'GET', '127.0.0.1', '[]', '2019-06-06 06:05:02', '2019-06-06 06:05:02');
+INSERT INTO `admin_operation_log` VALUES ('714', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-06 06:05:02', '2019-06-06 06:05:02');
+INSERT INTO `admin_operation_log` VALUES ('715', '1', 'admin/auth/logout', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 06:05:05', '2019-06-06 06:05:05');
+INSERT INTO `admin_operation_log` VALUES ('716', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-06 06:05:28', '2019-06-06 06:05:28');
+INSERT INTO `admin_operation_log` VALUES ('717', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 06:43:37', '2019-06-06 06:43:37');
+INSERT INTO `admin_operation_log` VALUES ('718', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 06:46:18', '2019-06-06 06:46:18');
+INSERT INTO `admin_operation_log` VALUES ('719', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 06:46:21', '2019-06-06 06:46:21');
+INSERT INTO `admin_operation_log` VALUES ('720', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 06:46:25', '2019-06-06 06:46:25');
+INSERT INTO `admin_operation_log` VALUES ('721', '1', 'admin/auth/menu/9/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 06:46:31', '2019-06-06 06:46:31');
+INSERT INTO `admin_operation_log` VALUES ('722', '1', 'admin/auth/menu/9/edit', 'GET', '127.0.0.1', '[]', '2019-06-06 06:46:44', '2019-06-06 06:46:44');
+INSERT INTO `admin_operation_log` VALUES ('723', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 06:46:45', '2019-06-06 06:46:45');
+INSERT INTO `admin_operation_log` VALUES ('724', '1', 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"9\",\"title\":\"\\u7528\\u6237\\u5217\\u8868\",\"icon\":\"fa-hand-stop-o\",\"uri\":\"\\/admin\\/member\\/users\",\"roles\":[\"1\",null],\"_token\":\"3d3LfjADKsVFEy6aUeehdtyh6KPup2ldYVfKBxuY\"}', '2019-06-06 06:53:08', '2019-06-06 06:53:08');
+INSERT INTO `admin_operation_log` VALUES ('725', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 06:53:09', '2019-06-06 06:53:09');
+INSERT INTO `admin_operation_log` VALUES ('726', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 06:53:17', '2019-06-06 06:53:17');
+INSERT INTO `admin_operation_log` VALUES ('727', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 06:53:18', '2019-06-06 06:53:18');
+INSERT INTO `admin_operation_log` VALUES ('728', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 06:53:21', '2019-06-06 06:53:21');
+INSERT INTO `admin_operation_log` VALUES ('729', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-06 06:53:22', '2019-06-06 06:53:22');
+INSERT INTO `admin_operation_log` VALUES ('730', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-06 06:53:28', '2019-06-06 06:53:28');
+INSERT INTO `admin_operation_log` VALUES ('731', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 07:13:31', '2019-06-06 07:13:31');
+INSERT INTO `admin_operation_log` VALUES ('732', '1', 'admin/auth/users', 'GET', '127.0.0.1', '[]', '2019-06-06 07:18:04', '2019-06-06 07:18:04');
+INSERT INTO `admin_operation_log` VALUES ('733', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 07:18:11', '2019-06-06 07:18:11');
+INSERT INTO `admin_operation_log` VALUES ('734', '1', 'admin/auth/menu/10/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 07:18:13', '2019-06-06 07:18:13');
+INSERT INTO `admin_operation_log` VALUES ('735', '1', 'admin/auth/menu/10', 'PUT', '127.0.0.1', '{\"parent_id\":\"9\",\"title\":\"\\u7528\\u6237\\u5217\\u8868\",\"icon\":\"fa-hand-stop-o\",\"uri\":\"member\\/users\",\"roles\":[\"1\",null],\"_token\":\"3d3LfjADKsVFEy6aUeehdtyh6KPup2ldYVfKBxuY\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/laraveladmin.a.com\\/admin\\/auth\\/menu\"}', '2019-06-06 07:18:27', '2019-06-06 07:18:27');
+INSERT INTO `admin_operation_log` VALUES ('736', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:18:27', '2019-06-06 07:18:27');
+INSERT INTO `admin_operation_log` VALUES ('737', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:18:29', '2019-06-06 07:18:29');
+INSERT INTO `admin_operation_log` VALUES ('738', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:18:35', '2019-06-06 07:18:35');
+INSERT INTO `admin_operation_log` VALUES ('739', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:20:46', '2019-06-06 07:20:46');
+INSERT INTO `admin_operation_log` VALUES ('740', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:20:48', '2019-06-06 07:20:48');
+INSERT INTO `admin_operation_log` VALUES ('741', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:25:29', '2019-06-06 07:25:29');
+INSERT INTO `admin_operation_log` VALUES ('742', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:25:40', '2019-06-06 07:25:40');
+INSERT INTO `admin_operation_log` VALUES ('743', '1', 'admin/config/system', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 07:25:45', '2019-06-06 07:25:45');
+INSERT INTO `admin_operation_log` VALUES ('744', '1', 'admin/config/system', 'GET', '127.0.0.1', '[]', '2019-06-06 07:30:10', '2019-06-06 07:30:10');
+INSERT INTO `admin_operation_log` VALUES ('745', '1', 'admin/config/system', 'GET', '127.0.0.1', '[]', '2019-06-06 07:30:37', '2019-06-06 07:30:37');
+INSERT INTO `admin_operation_log` VALUES ('746', '1', 'admin/config/system', 'GET', '127.0.0.1', '[]', '2019-06-06 07:31:29', '2019-06-06 07:31:29');
+INSERT INTO `admin_operation_log` VALUES ('747', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-06 07:38:16', '2019-06-06 07:38:16');
+INSERT INTO `admin_operation_log` VALUES ('748', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-06 07:38:17', '2019-06-06 07:38:17');
+INSERT INTO `admin_operation_log` VALUES ('749', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-06 07:38:22', '2019-06-06 07:38:22');
+INSERT INTO `admin_operation_log` VALUES ('750', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 07:38:29', '2019-06-06 07:38:29');
+INSERT INTO `admin_operation_log` VALUES ('751', '1', 'admin/auth/menu/10/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 07:39:38', '2019-06-06 07:39:38');
+INSERT INTO `admin_operation_log` VALUES ('752', '1', 'admin/auth/menu/10', 'PUT', '127.0.0.1', '{\"parent_id\":\"9\",\"title\":\"\\u7528\\u6237\\u5217\\u8868\",\"icon\":\"fa-hand-stop-o\",\"uri\":\"users\\/list\",\"roles\":[\"1\",null],\"_token\":\"3d3LfjADKsVFEy6aUeehdtyh6KPup2ldYVfKBxuY\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/laraveladmin.a.com\\/admin\\/auth\\/menu\"}', '2019-06-06 07:39:58', '2019-06-06 07:39:58');
+INSERT INTO `admin_operation_log` VALUES ('753', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:39:58', '2019-06-06 07:39:58');
+INSERT INTO `admin_operation_log` VALUES ('754', '1', 'admin/auth/menu/10/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 07:41:28', '2019-06-06 07:41:28');
+INSERT INTO `admin_operation_log` VALUES ('755', '1', 'admin/auth/menu/10', 'PUT', '127.0.0.1', '{\"parent_id\":\"9\",\"title\":\"\\u7528\\u6237\\u5217\\u8868\",\"icon\":\"fa-hand-stop-o\",\"uri\":\"users\\/index\",\"roles\":[\"1\",null],\"_token\":\"3d3LfjADKsVFEy6aUeehdtyh6KPup2ldYVfKBxuY\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/laraveladmin.a.com\\/admin\\/auth\\/menu\"}', '2019-06-06 07:41:35', '2019-06-06 07:41:35');
+INSERT INTO `admin_operation_log` VALUES ('756', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:41:35', '2019-06-06 07:41:35');
+INSERT INTO `admin_operation_log` VALUES ('757', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:41:48', '2019-06-06 07:41:48');
+INSERT INTO `admin_operation_log` VALUES ('758', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:45:11', '2019-06-06 07:45:11');
+INSERT INTO `admin_operation_log` VALUES ('759', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:45:31', '2019-06-06 07:45:31');
+INSERT INTO `admin_operation_log` VALUES ('760', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:45:33', '2019-06-06 07:45:33');
+INSERT INTO `admin_operation_log` VALUES ('761', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:47:18', '2019-06-06 07:47:18');
+INSERT INTO `admin_operation_log` VALUES ('762', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-06 07:47:25', '2019-06-06 07:47:25');
+INSERT INTO `admin_operation_log` VALUES ('763', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 07:47:26', '2019-06-06 07:47:26');
+INSERT INTO `admin_operation_log` VALUES ('764', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '[]', '2019-06-06 07:47:32', '2019-06-06 07:47:32');
+INSERT INTO `admin_operation_log` VALUES ('765', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"per_page\":\"100\",\"_pjax\":\"#pjax-container\"}', '2019-06-06 07:47:37', '2019-06-06 07:47:37');
+INSERT INTO `admin_operation_log` VALUES ('766', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"per_page\":\"100\"}', '2019-06-06 07:47:41', '2019-06-06 07:47:41');
+INSERT INTO `admin_operation_log` VALUES ('767', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"per_page\":\"100\"}', '2019-06-06 07:57:59', '2019-06-06 07:57:59');
+INSERT INTO `admin_operation_log` VALUES ('768', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"per_page\":\"100\"}', '2019-06-06 07:58:03', '2019-06-06 07:58:03');
+INSERT INTO `admin_operation_log` VALUES ('769', '1', 'admin/config/system', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 07:58:10', '2019-06-06 07:58:10');
+INSERT INTO `admin_operation_log` VALUES ('770', '1', 'admin/config/system', 'GET', '127.0.0.1', '[]', '2019-06-06 07:58:15', '2019-06-06 07:58:15');
+INSERT INTO `admin_operation_log` VALUES ('771', '1', 'admin/config/system', 'GET', '127.0.0.1', '[]', '2019-06-06 08:01:00', '2019-06-06 08:01:00');
+INSERT INTO `admin_operation_log` VALUES ('772', '1', 'admin/config/system', 'GET', '127.0.0.1', '[]', '2019-06-06 08:02:29', '2019-06-06 08:02:29');
+INSERT INTO `admin_operation_log` VALUES ('773', '1', 'admin/config/system', 'GET', '127.0.0.1', '[]', '2019-06-06 08:03:13', '2019-06-06 08:03:13');
+INSERT INTO `admin_operation_log` VALUES ('774', '1', 'admin/config/system', 'GET', '127.0.0.1', '[]', '2019-06-06 08:08:33', '2019-06-06 08:08:33');
+INSERT INTO `admin_operation_log` VALUES ('775', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"per_page\":\"100\",\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:08:34', '2019-06-06 08:08:34');
+INSERT INTO `admin_operation_log` VALUES ('776', '1', 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"per_page\":\"100\"}', '2019-06-06 08:08:37', '2019-06-06 08:08:37');
+INSERT INTO `admin_operation_log` VALUES ('777', '1', 'admin/config/system', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:08:40', '2019-06-06 08:08:40');
+INSERT INTO `admin_operation_log` VALUES ('778', '1', 'admin/config/system', 'GET', '127.0.0.1', '[]', '2019-06-06 08:09:53', '2019-06-06 08:09:53');
+INSERT INTO `admin_operation_log` VALUES ('779', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:10:03', '2019-06-06 08:10:03');
+INSERT INTO `admin_operation_log` VALUES ('780', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-06 08:11:14', '2019-06-06 08:11:14');
+INSERT INTO `admin_operation_log` VALUES ('781', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-06 08:33:02', '2019-06-06 08:33:02');
+INSERT INTO `admin_operation_log` VALUES ('782', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-06 08:34:41', '2019-06-06 08:34:41');
+INSERT INTO `admin_operation_log` VALUES ('783', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-06 08:34:54', '2019-06-06 08:34:54');
+INSERT INTO `admin_operation_log` VALUES ('784', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-06 08:35:08', '2019-06-06 08:35:08');
+INSERT INTO `admin_operation_log` VALUES ('785', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:35:08', '2019-06-06 08:35:08');
+INSERT INTO `admin_operation_log` VALUES ('786', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-06 08:35:11', '2019-06-06 08:35:11');
+INSERT INTO `admin_operation_log` VALUES ('787', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:35:11', '2019-06-06 08:35:11');
+INSERT INTO `admin_operation_log` VALUES ('788', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:35:24', '2019-06-06 08:35:24');
+INSERT INTO `admin_operation_log` VALUES ('789', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-06 08:35:32', '2019-06-06 08:35:32');
+INSERT INTO `admin_operation_log` VALUES ('790', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-06 08:35:51', '2019-06-06 08:35:51');
+INSERT INTO `admin_operation_log` VALUES ('791', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-06 08:36:37', '2019-06-06 08:36:37');
+INSERT INTO `admin_operation_log` VALUES ('792', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_sort\":{\"column\":\"id\",\"type\":\"desc\"},\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:36:51', '2019-06-06 08:36:51');
+INSERT INTO `admin_operation_log` VALUES ('793', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_sort\":{\"column\":\"id\",\"type\":\"asc\"},\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:36:53', '2019-06-06 08:36:53');
+INSERT INTO `admin_operation_log` VALUES ('794', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_sort\":{\"column\":\"id\",\"type\":\"asc\"}}', '2019-06-06 08:37:55', '2019-06-06 08:37:55');
+INSERT INTO `admin_operation_log` VALUES ('795', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_sort\":{\"column\":\"id\",\"type\":\"asc\"}}', '2019-06-06 08:38:06', '2019-06-06 08:38:06');
+INSERT INTO `admin_operation_log` VALUES ('796', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_sort\":{\"column\":\"id\",\"type\":\"asc\"}}', '2019-06-06 08:38:16', '2019-06-06 08:38:16');
+INSERT INTO `admin_operation_log` VALUES ('797', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:38:36', '2019-06-06 08:38:36');
+INSERT INTO `admin_operation_log` VALUES ('798', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"_export_\":\"page:1\"}', '2019-06-06 08:38:44', '2019-06-06 08:38:44');
+INSERT INTO `admin_operation_log` VALUES ('799', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:38:52', '2019-06-06 08:38:52');
+INSERT INTO `admin_operation_log` VALUES ('800', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\",\"_export_\":\"page:1\"}', '2019-06-06 08:38:54', '2019-06-06 08:38:54');
+INSERT INTO `admin_operation_log` VALUES ('801', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-06 08:39:53', '2019-06-06 08:39:53');
+INSERT INTO `admin_operation_log` VALUES ('802', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_export_\":\"page:1\"}', '2019-06-06 08:39:57', '2019-06-06 08:39:57');
+INSERT INTO `admin_operation_log` VALUES ('803', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-06 08:49:16', '2019-06-06 08:49:16');
+INSERT INTO `admin_operation_log` VALUES ('804', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:49:18', '2019-06-06 08:49:18');
+INSERT INTO `admin_operation_log` VALUES ('805', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '[]', '2019-06-06 08:50:10', '2019-06-06 08:50:10');
+INSERT INTO `admin_operation_log` VALUES ('806', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '[]', '2019-06-06 08:50:18', '2019-06-06 08:50:18');
+INSERT INTO `admin_operation_log` VALUES ('807', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:50:21', '2019-06-06 08:50:21');
+INSERT INTO `admin_operation_log` VALUES ('808', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:50:24', '2019-06-06 08:50:24');
+INSERT INTO `admin_operation_log` VALUES ('809', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '[]', '2019-06-06 08:58:12', '2019-06-06 08:58:12');
+INSERT INTO `admin_operation_log` VALUES ('810', '1', 'admin/users/index', 'POST', '127.0.0.1', '{\"name\":\"rwerwer\",\"email\":\"wewr\",\"password\":\"ewwerwe\",\"_token\":\"3d3LfjADKsVFEy6aUeehdtyh6KPup2ldYVfKBxuY\"}', '2019-06-06 08:58:24', '2019-06-06 08:58:24');
+INSERT INTO `admin_operation_log` VALUES ('811', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-06 08:58:29', '2019-06-06 08:58:29');
+INSERT INTO `admin_operation_log` VALUES ('812', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:58:31', '2019-06-06 08:58:31');
+INSERT INTO `admin_operation_log` VALUES ('813', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 08:58:32', '2019-06-06 08:58:32');
+INSERT INTO `admin_operation_log` VALUES ('814', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '[]', '2019-06-06 09:00:00', '2019-06-06 09:00:00');
+INSERT INTO `admin_operation_log` VALUES ('815', '1', 'admin/users/index', 'POST', '127.0.0.1', '{\"name\":\"admin\",\"email\":\"2323323\",\"password\":\"2232323\",\"_token\":\"3d3LfjADKsVFEy6aUeehdtyh6KPup2ldYVfKBxuY\",\"_previous_\":\"http:\\/\\/laraveladmin.a.com\\/admin\\/users\\/index\"}', '2019-06-06 09:00:07', '2019-06-06 09:00:07');
+INSERT INTO `admin_operation_log` VALUES ('816', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 09:00:56', '2019-06-06 09:00:56');
+INSERT INTO `admin_operation_log` VALUES ('817', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 09:00:59', '2019-06-06 09:00:59');
+INSERT INTO `admin_operation_log` VALUES ('818', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 09:01:01', '2019-06-06 09:01:01');
+INSERT INTO `admin_operation_log` VALUES ('819', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 09:02:17', '2019-06-06 09:02:17');
+INSERT INTO `admin_operation_log` VALUES ('820', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 09:02:19', '2019-06-06 09:02:19');
+INSERT INTO `admin_operation_log` VALUES ('821', '1', 'admin/auth/users/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 09:02:20', '2019-06-06 09:02:20');
+INSERT INTO `admin_operation_log` VALUES ('822', '1', 'admin/auth/users/create', 'GET', '127.0.0.1', '[]', '2019-06-06 09:16:22', '2019-06-06 09:16:22');
+INSERT INTO `admin_operation_log` VALUES ('823', '1', 'admin/auth/users/create', 'GET', '127.0.0.1', '[]', '2019-06-06 09:16:25', '2019-06-06 09:16:25');
+INSERT INTO `admin_operation_log` VALUES ('824', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 09:16:52', '2019-06-06 09:16:52');
+INSERT INTO `admin_operation_log` VALUES ('825', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 09:16:54', '2019-06-06 09:16:54');
+INSERT INTO `admin_operation_log` VALUES ('826', '1', 'admin/users/index', 'POST', '127.0.0.1', '{\"name\":\"admin\",\"email\":\"yc_1224@163.com\",\"password\":\"ewwerwe\",\"_token\":\"3d3LfjADKsVFEy6aUeehdtyh6KPup2ldYVfKBxuY\",\"_previous_\":\"http:\\/\\/laraveladmin.a.com\\/admin\\/users\\/index\"}', '2019-06-06 09:16:59', '2019-06-06 09:16:59');
+INSERT INTO `admin_operation_log` VALUES ('827', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 09:17:02', '2019-06-06 09:17:02');
+INSERT INTO `admin_operation_log` VALUES ('828', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '[]', '2019-06-06 09:22:00', '2019-06-06 09:22:00');
+INSERT INTO `admin_operation_log` VALUES ('829', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 09:22:12', '2019-06-06 09:22:12');
+INSERT INTO `admin_operation_log` VALUES ('830', '1', 'admin/auth/users/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 09:22:13', '2019-06-06 09:22:13');
+INSERT INTO `admin_operation_log` VALUES ('831', '1', 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 09:27:54', '2019-06-06 09:27:54');
+INSERT INTO `admin_operation_log` VALUES ('832', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 09:29:57', '2019-06-06 09:29:57');
+INSERT INTO `admin_operation_log` VALUES ('833', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-06 09:29:58', '2019-06-06 09:29:58');
+INSERT INTO `admin_operation_log` VALUES ('834', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '[]', '2019-06-06 09:31:14', '2019-06-06 09:31:14');
+INSERT INTO `admin_operation_log` VALUES ('835', '1', 'admin/users/index', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":\"we\",\"password_confirmation\":\"we\",\"_token\":\"3d3LfjADKsVFEy6aUeehdtyh6KPup2ldYVfKBxuY\"}', '2019-06-06 09:31:18', '2019-06-06 09:31:18');
+INSERT INTO `admin_operation_log` VALUES ('836', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-10 02:16:15', '2019-06-10 02:16:15');
+INSERT INTO `admin_operation_log` VALUES ('837', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:16:20', '2019-06-10 02:16:20');
+INSERT INTO `admin_operation_log` VALUES ('838', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:16:22', '2019-06-10 02:16:22');
+INSERT INTO `admin_operation_log` VALUES ('839', '1', 'admin/users/index', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/users\\/index\"}', '2019-06-10 02:16:25', '2019-06-10 02:16:25');
+INSERT INTO `admin_operation_log` VALUES ('840', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:16:32', '2019-06-10 02:16:32');
+INSERT INTO `admin_operation_log` VALUES ('841', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:21:21', '2019-06-10 02:21:21');
+INSERT INTO `admin_operation_log` VALUES ('842', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-10 02:21:24', '2019-06-10 02:21:24');
+INSERT INTO `admin_operation_log` VALUES ('843', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-10 02:21:37', '2019-06-10 02:21:37');
+INSERT INTO `admin_operation_log` VALUES ('844', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-10 02:21:39', '2019-06-10 02:21:39');
+INSERT INTO `admin_operation_log` VALUES ('845', '1', 'admin/users/index/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:21:41', '2019-06-10 02:21:41');
+INSERT INTO `admin_operation_log` VALUES ('846', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-10 02:21:41', '2019-06-10 02:21:41');
+INSERT INTO `admin_operation_log` VALUES ('847', '1', 'admin/users/index/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:22:48', '2019-06-10 02:22:48');
+INSERT INTO `admin_operation_log` VALUES ('848', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:30:40', '2019-06-10 02:30:40');
+INSERT INTO `admin_operation_log` VALUES ('849', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:30:44', '2019-06-10 02:30:44');
+INSERT INTO `admin_operation_log` VALUES ('850', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:30:44', '2019-06-10 02:30:44');
+INSERT INTO `admin_operation_log` VALUES ('851', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:30:48', '2019-06-10 02:30:48');
+INSERT INTO `admin_operation_log` VALUES ('852', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:30:50', '2019-06-10 02:30:50');
+INSERT INTO `admin_operation_log` VALUES ('853', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:30:52', '2019-06-10 02:30:52');
+INSERT INTO `admin_operation_log` VALUES ('854', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:30:54', '2019-06-10 02:30:54');
+INSERT INTO `admin_operation_log` VALUES ('855', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-10 02:30:58', '2019-06-10 02:30:58');
+INSERT INTO `admin_operation_log` VALUES ('856', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:30:59', '2019-06-10 02:30:59');
+INSERT INTO `admin_operation_log` VALUES ('857', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:31:02', '2019-06-10 02:31:02');
+INSERT INTO `admin_operation_log` VALUES ('858', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:31:06', '2019-06-10 02:31:06');
+INSERT INTO `admin_operation_log` VALUES ('859', '1', 'admin/users/index', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/users\\/index\"}', '2019-06-10 02:31:08', '2019-06-10 02:31:08');
+INSERT INTO `admin_operation_log` VALUES ('860', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:31:09', '2019-06-10 02:31:09');
+INSERT INTO `admin_operation_log` VALUES ('861', '1', 'admin/users/index', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\"}', '2019-06-10 02:31:11', '2019-06-10 02:31:11');
+INSERT INTO `admin_operation_log` VALUES ('862', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:31:14', '2019-06-10 02:31:14');
+INSERT INTO `admin_operation_log` VALUES ('863', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:31:14', '2019-06-10 02:31:14');
+INSERT INTO `admin_operation_log` VALUES ('864', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:31:15', '2019-06-10 02:31:15');
+INSERT INTO `admin_operation_log` VALUES ('865', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:31:15', '2019-06-10 02:31:15');
+INSERT INTO `admin_operation_log` VALUES ('866', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:32:39', '2019-06-10 02:32:39');
+INSERT INTO `admin_operation_log` VALUES ('867', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:32:40', '2019-06-10 02:32:40');
+INSERT INTO `admin_operation_log` VALUES ('868', '1', 'admin/users/index', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/users\\/index\"}', '2019-06-10 02:32:41', '2019-06-10 02:32:41');
+INSERT INTO `admin_operation_log` VALUES ('869', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:32:44', '2019-06-10 02:32:44');
+INSERT INTO `admin_operation_log` VALUES ('870', '1', 'admin/users/index', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/users\\/index\"}', '2019-06-10 02:32:45', '2019-06-10 02:32:45');
+INSERT INTO `admin_operation_log` VALUES ('871', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-10 02:35:44', '2019-06-10 02:35:44');
+INSERT INTO `admin_operation_log` VALUES ('872', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:35:45', '2019-06-10 02:35:45');
+INSERT INTO `admin_operation_log` VALUES ('873', '1', 'admin/users/index', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/users\\/index\"}', '2019-06-10 02:35:47', '2019-06-10 02:35:47');
+INSERT INTO `admin_operation_log` VALUES ('874', '1', 'admin/users/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:35:55', '2019-06-10 02:35:55');
+INSERT INTO `admin_operation_log` VALUES ('875', '1', 'admin/users/index', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/users\\/index\"}', '2019-06-10 02:35:56', '2019-06-10 02:35:56');
+INSERT INTO `admin_operation_log` VALUES ('876', '1', 'admin/users/index/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:35:58', '2019-06-10 02:35:58');
+INSERT INTO `admin_operation_log` VALUES ('877', '1', 'admin/users/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:36:05', '2019-06-10 02:36:05');
+INSERT INTO `admin_operation_log` VALUES ('878', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-10 02:37:51', '2019-06-10 02:37:51');
+INSERT INTO `admin_operation_log` VALUES ('879', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-10 02:38:01', '2019-06-10 02:38:01');
+INSERT INTO `admin_operation_log` VALUES ('880', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-10 02:39:15', '2019-06-10 02:39:15');
+INSERT INTO `admin_operation_log` VALUES ('881', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-10 02:39:45', '2019-06-10 02:39:45');
+INSERT INTO `admin_operation_log` VALUES ('882', '1', 'admin/users/index', 'GET', '127.0.0.1', '[]', '2019-06-10 02:39:50', '2019-06-10 02:39:50');
+INSERT INTO `admin_operation_log` VALUES ('883', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:46:27', '2019-06-10 02:46:27');
+INSERT INTO `admin_operation_log` VALUES ('884', '1', 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"9\",\"title\":\"\\u6d4b\\u8bd5\",\"icon\":\"fa-bars\",\"uri\":\"ceshi\\/index\",\"roles\":[\"1\",null],\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\"}', '2019-06-10 02:46:44', '2019-06-10 02:46:44');
+INSERT INTO `admin_operation_log` VALUES ('885', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-10 02:46:44', '2019-06-10 02:46:44');
+INSERT INTO `admin_operation_log` VALUES ('886', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-10 02:46:48', '2019-06-10 02:46:48');
+INSERT INTO `admin_operation_log` VALUES ('887', '1', 'admin/ceshi/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:46:50', '2019-06-10 02:46:50');
+INSERT INTO `admin_operation_log` VALUES ('888', '1', 'admin/ceshi/index', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:47:33', '2019-06-10 02:47:33');
+INSERT INTO `admin_operation_log` VALUES ('889', '1', 'admin/ceshi/index/create', 'GET', '127.0.0.1', '[]', '2019-06-10 02:48:05', '2019-06-10 02:48:05');
+INSERT INTO `admin_operation_log` VALUES ('890', '1', 'admin/ceshi/index', 'POST', '127.0.0.1', '{\"name\":\"admin\",\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/ceshi\\/index\"}', '2019-06-10 02:48:09', '2019-06-10 02:48:09');
+INSERT INTO `admin_operation_log` VALUES ('891', '1', 'admin/ceshi/index/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:48:16', '2019-06-10 02:48:16');
+INSERT INTO `admin_operation_log` VALUES ('892', '1', 'admin/ceshi/index', 'POST', '127.0.0.1', '{\"name\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/ceshi\\/index\"}', '2019-06-10 02:48:17', '2019-06-10 02:48:17');
+INSERT INTO `admin_operation_log` VALUES ('893', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-10 02:52:06', '2019-06-10 02:52:06');
+INSERT INTO `admin_operation_log` VALUES ('894', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:52:14', '2019-06-10 02:52:14');
+INSERT INTO `admin_operation_log` VALUES ('895', '1', 'admin/auth/menu/10/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:52:21', '2019-06-10 02:52:21');
+INSERT INTO `admin_operation_log` VALUES ('896', '1', 'admin/auth/menu/10', 'PUT', '127.0.0.1', '{\"parent_id\":\"9\",\"title\":\"\\u7528\\u6237\\u5217\\u8868\",\"icon\":\"fa-hand-stop-o\",\"uri\":\"users\",\"roles\":[\"1\",null],\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/auth\\/menu\"}', '2019-06-10 02:52:27', '2019-06-10 02:52:27');
+INSERT INTO `admin_operation_log` VALUES ('897', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-10 02:52:27', '2019-06-10 02:52:27');
+INSERT INTO `admin_operation_log` VALUES ('898', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-06-10 02:53:26', '2019-06-10 02:53:26');
+INSERT INTO `admin_operation_log` VALUES ('899', '1', 'admin/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:53:31', '2019-06-10 02:53:31');
+INSERT INTO `admin_operation_log` VALUES ('900', '1', 'admin/users/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:53:35', '2019-06-10 02:53:35');
+INSERT INTO `admin_operation_log` VALUES ('901', '1', 'admin/users', 'GET', '127.0.0.1', '[]', '2019-06-10 02:53:35', '2019-06-10 02:53:35');
+INSERT INTO `admin_operation_log` VALUES ('902', '1', 'admin/users/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 02:54:22', '2019-06-10 02:54:22');
+INSERT INTO `admin_operation_log` VALUES ('903', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/users\"}', '2019-06-10 02:54:25', '2019-06-10 02:54:25');
+INSERT INTO `admin_operation_log` VALUES ('904', '1', 'admin/users/create', 'GET', '127.0.0.1', '[]', '2019-06-10 02:54:25', '2019-06-10 02:54:25');
+INSERT INTO `admin_operation_log` VALUES ('905', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\"}', '2019-06-10 03:00:35', '2019-06-10 03:00:35');
+INSERT INTO `admin_operation_log` VALUES ('906', '1', 'admin/users', 'GET', '127.0.0.1', '[]', '2019-06-10 03:00:36', '2019-06-10 03:00:36');
+INSERT INTO `admin_operation_log` VALUES ('907', '1', 'admin/users/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 03:00:39', '2019-06-10 03:00:39');
+INSERT INTO `admin_operation_log` VALUES ('908', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/users\"}', '2019-06-10 03:00:40', '2019-06-10 03:00:40');
+INSERT INTO `admin_operation_log` VALUES ('909', '1', 'admin/users', 'GET', '127.0.0.1', '[]', '2019-06-10 03:00:40', '2019-06-10 03:00:40');
+INSERT INTO `admin_operation_log` VALUES ('910', '1', 'admin/users', 'GET', '127.0.0.1', '[]', '2019-06-10 03:00:55', '2019-06-10 03:00:55');
+INSERT INTO `admin_operation_log` VALUES ('911', '1', 'admin/users/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 03:00:56', '2019-06-10 03:00:56');
+INSERT INTO `admin_operation_log` VALUES ('912', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/users\"}', '2019-06-10 03:00:58', '2019-06-10 03:00:58');
+INSERT INTO `admin_operation_log` VALUES ('913', '1', 'admin/users/create', 'GET', '127.0.0.1', '[]', '2019-06-10 03:00:58', '2019-06-10 03:00:58');
+INSERT INTO `admin_operation_log` VALUES ('914', '1', 'admin/users/create', 'GET', '127.0.0.1', '[]', '2019-06-10 03:01:08', '2019-06-10 03:01:08');
+INSERT INTO `admin_operation_log` VALUES ('915', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\"}', '2019-06-10 03:01:09', '2019-06-10 03:01:09');
+INSERT INTO `admin_operation_log` VALUES ('916', '1', 'admin/users/create', 'GET', '127.0.0.1', '[]', '2019-06-10 03:01:10', '2019-06-10 03:01:10');
+INSERT INTO `admin_operation_log` VALUES ('917', '1', 'admin/users/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 03:01:12', '2019-06-10 03:01:12');
+INSERT INTO `admin_operation_log` VALUES ('918', '1', 'admin/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 03:01:13', '2019-06-10 03:01:13');
+INSERT INTO `admin_operation_log` VALUES ('919', '1', 'admin/users/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 03:01:15', '2019-06-10 03:01:15');
+INSERT INTO `admin_operation_log` VALUES ('920', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/users\"}', '2019-06-10 03:01:16', '2019-06-10 03:01:16');
+INSERT INTO `admin_operation_log` VALUES ('921', '1', 'admin/users/create', 'GET', '127.0.0.1', '[]', '2019-06-10 03:01:16', '2019-06-10 03:01:16');
+INSERT INTO `admin_operation_log` VALUES ('922', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\"}', '2019-06-10 03:02:57', '2019-06-10 03:02:57');
+INSERT INTO `admin_operation_log` VALUES ('923', '1', 'admin/users/create', 'GET', '127.0.0.1', '[]', '2019-06-10 03:02:58', '2019-06-10 03:02:58');
+INSERT INTO `admin_operation_log` VALUES ('924', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\"}', '2019-06-10 03:03:18', '2019-06-10 03:03:18');
+INSERT INTO `admin_operation_log` VALUES ('925', '1', 'admin/users', 'GET', '127.0.0.1', '[]', '2019-06-10 03:03:18', '2019-06-10 03:03:18');
+INSERT INTO `admin_operation_log` VALUES ('926', '1', 'admin/users/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 03:03:29', '2019-06-10 03:03:29');
+INSERT INTO `admin_operation_log` VALUES ('927', '1', 'admin/users/create', 'GET', '127.0.0.1', '[]', '2019-06-10 03:09:36', '2019-06-10 03:09:36');
+INSERT INTO `admin_operation_log` VALUES ('928', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\"}', '2019-06-10 03:09:37', '2019-06-10 03:09:37');
+INSERT INTO `admin_operation_log` VALUES ('929', '1', 'admin/users/create', 'GET', '127.0.0.1', '[]', '2019-06-10 03:09:37', '2019-06-10 03:09:37');
+INSERT INTO `admin_operation_log` VALUES ('930', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":\"success\",\"email\":\"yc_1222sdf@163.com\",\"password\":\"123456\",\"password_confirmation\":\"123456\",\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\"}', '2019-06-10 03:10:44', '2019-06-10 03:10:44');
+INSERT INTO `admin_operation_log` VALUES ('931', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 03:10:50', '2019-06-10 03:10:50');
+INSERT INTO `admin_operation_log` VALUES ('932', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-10 03:10:54', '2019-06-10 03:10:54');
+INSERT INTO `admin_operation_log` VALUES ('933', '1', 'admin/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 03:10:56', '2019-06-10 03:10:56');
+INSERT INTO `admin_operation_log` VALUES ('934', '1', 'admin/users/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 03:10:58', '2019-06-10 03:10:58');
+INSERT INTO `admin_operation_log` VALUES ('935', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":\"adminxiaoyukarl\",\"email\":\"a@@@1\",\"password\":\"###...\",\"password_confirmation\":\"123456\",\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/users\"}', '2019-06-10 03:11:15', '2019-06-10 03:11:15');
+INSERT INTO `admin_operation_log` VALUES ('936', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-10 03:11:32', '2019-06-10 03:11:32');
+INSERT INTO `admin_operation_log` VALUES ('937', '1', 'admin/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 03:11:41', '2019-06-10 03:11:41');
+INSERT INTO `admin_operation_log` VALUES ('938', '1', 'admin/users/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 03:11:43', '2019-06-10 03:11:43');
+INSERT INTO `admin_operation_log` VALUES ('939', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":null,\"email\":null,\"password\":null,\"password_confirmation\":null,\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\",\"_previous_\":\"http:\\/\\/hunlian.a.com\\/admin\\/users\"}', '2019-06-10 03:11:44', '2019-06-10 03:11:44');
+INSERT INTO `admin_operation_log` VALUES ('940', '1', 'admin/users/create', 'GET', '127.0.0.1', '[]', '2019-06-10 03:11:45', '2019-06-10 03:11:45');
+INSERT INTO `admin_operation_log` VALUES ('941', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":\"adminxiaoyukarl\",\"email\":\"eac@163.com\",\"password\":\"123456789\",\"password_confirmation\":\"12345678\",\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\"}', '2019-06-10 03:12:07', '2019-06-10 03:12:07');
+INSERT INTO `admin_operation_log` VALUES ('942', '1', 'admin/users/create', 'GET', '127.0.0.1', '[]', '2019-06-10 03:12:07', '2019-06-10 03:12:07');
+INSERT INTO `admin_operation_log` VALUES ('943', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":\"adminxiaoyukarl\",\"email\":\"eac@163.com\",\"password\":\"123456789\",\"password_confirmation\":\"123456789\",\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\"}', '2019-06-10 03:12:12', '2019-06-10 03:12:12');
+INSERT INTO `admin_operation_log` VALUES ('944', '1', 'admin/users/create', 'GET', '127.0.0.1', '[]', '2019-06-10 03:12:12', '2019-06-10 03:12:12');
+INSERT INTO `admin_operation_log` VALUES ('945', '1', 'admin/users', 'POST', '127.0.0.1', '{\"name\":\"adminxiaoyukarl\",\"email\":\"eac@163.com\",\"password\":\"123456789\",\"password_confirmation\":\"123456789\",\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\"}', '2019-06-10 03:19:12', '2019-06-10 03:19:12');
+INSERT INTO `admin_operation_log` VALUES ('946', '1', 'admin/users', 'GET', '127.0.0.1', '[]', '2019-06-10 03:19:12', '2019-06-10 03:19:12');
+INSERT INTO `admin_operation_log` VALUES ('947', '1', 'admin/users/2/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 03:19:18', '2019-06-10 03:19:18');
+INSERT INTO `admin_operation_log` VALUES ('948', '1', 'admin/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-06-10 03:19:24', '2019-06-10 03:19:24');
+INSERT INTO `admin_operation_log` VALUES ('949', '1', 'admin/users/2', 'DELETE', '127.0.0.1', '{\"_method\":\"delete\",\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\"}', '2019-06-10 03:19:28', '2019-06-10 03:19:28');
+INSERT INTO `admin_operation_log` VALUES ('950', '1', 'admin/users/2', 'DELETE', '127.0.0.1', '{\"_method\":\"delete\",\"_token\":\"v1DzJaAhCCpEfNXL6ez9lVvbHllFEY3ah1mlLf42\"}', '2019-06-10 03:20:21', '2019-06-10 03:20:21');
+INSERT INTO `admin_operation_log` VALUES ('951', '1', 'admin/users', 'GET', '127.0.0.1', '[]', '2019-06-10 03:20:26', '2019-06-10 03:20:26');
+INSERT INTO `admin_operation_log` VALUES ('952', '1', 'admin/users', 'GET', '127.0.0.1', '[]', '2019-06-10 06:01:00', '2019-06-10 06:01:00');
+INSERT INTO `admin_operation_log` VALUES ('953', '1', 'admin/users', 'GET', '127.0.0.1', '[]', '2019-06-10 06:57:59', '2019-06-10 06:57:59');
+INSERT INTO `admin_operation_log` VALUES ('954', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-06-10 08:13:14', '2019-06-10 08:13:14');
 
 -- ----------------------------
 -- Table structure for admin_permissions
@@ -729,6 +1065,8 @@ INSERT INTO `admin_role_menu` VALUES ('1', '2', null, null);
 INSERT INTO `admin_role_menu` VALUES ('1', '7', null, null);
 INSERT INTO `admin_role_menu` VALUES ('1', '8', null, null);
 INSERT INTO `admin_role_menu` VALUES ('1', '9', null, null);
+INSERT INTO `admin_role_menu` VALUES ('1', '10', null, null);
+INSERT INTO `admin_role_menu` VALUES ('1', '11', null, null);
 
 -- ----------------------------
 -- Table structure for admin_role_permissions
@@ -822,7 +1160,23 @@ CREATE TABLE `admin_users` (
 -- ----------------------------
 -- Records of admin_users
 -- ----------------------------
-INSERT INTO `admin_users` VALUES ('1', 'admin', '$2y$10$hhLpIwUg/rmbauNUjjV0bOhZLe60F6U2oStKpAoPTgVG75Ix15odW', 'Administrator', null, null, '2018-09-28 03:03:27', '2018-09-28 03:03:27');
+INSERT INTO `admin_users` VALUES ('1', 'admin', '$2y$10$hhLpIwUg/rmbauNUjjV0bOhZLe60F6U2oStKpAoPTgVG75Ix15odW', 'Administrator', null, 'FzRhtQG20cOSNXPQFnyXtIOgq21708VK4WRNpY0nXxMjyaRuseguZJyP0ITm', '2018-09-28 03:03:27', '2018-09-28 03:03:27');
+
+-- ----------------------------
+-- Table structure for ceshi
+-- ----------------------------
+DROP TABLE IF EXISTS `ceshi`;
+CREATE TABLE `ceshi` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `updated_at` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of ceshi
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for migrations
@@ -858,21 +1212,50 @@ CREATE TABLE `password_resets` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for sms_code
+-- ----------------------------
+DROP TABLE IF EXISTS `sms_code`;
+CREATE TABLE `sms_code` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `phone` char(11) NOT NULL,
+  `content` varchar(255) NOT NULL,
+  `code` char(6) NOT NULL,
+  `send_time` int(10) unsigned NOT NULL,
+  `end_time` int(10) unsigned NOT NULL,
+  `status` int(255) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of sms_code
+-- ----------------------------
+INSERT INTO `sms_code` VALUES ('1', '17620342520', '【云付通】尊敬的客户您好，欢迎使用云付通平台，您的手机验证码是：123456，若非本人操作，请忽略！', '123456', '1560150067', '1560150367', '1');
+
+-- ----------------------------
 -- Table structure for users
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `phone` char(12) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age` int(11) DEFAULT NULL COMMENT '年龄',
+  `stature` float DEFAULT NULL COMMENT '身高',
+  `signature` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '个性签名',
+  `constellation` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '星座',
+  `job` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '职业',
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '地区',
+  `last_login` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
+INSERT INTO `users` VALUES ('1', 'user', '12', '$2y$10$hhLpIwUg/rmbauNUjjV0bOhZLe60F6U2oStKpAoPTgVG75Ix15odW', null, '2019-06-06 16:38:03', '2019-06-10 07:03:33', '17620342520', null, null, null, null, null, null, '2019-06-10 07:03:33');
